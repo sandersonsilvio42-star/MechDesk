@@ -1673,60 +1673,60 @@
 
             let veiculoFetch = null;
             try {
-                // Tentando com corsproxy.io que costuma aceitar origens locais (file:///)
+                // Usando allorigins.win que é mais estável para evitar problemas de CORS em produção
                 const apiUrl = 'https://carplateapi.bhcd.com.br/search?p=' + raw;
-                const res = await fetch('https://corsproxy.io/?' + encodeURIComponent(apiUrl));
-
-                veiculoFetch = await res.json();
+                const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`);
+                const json = await res.json();
+                
+                // O allorigins retorna o conteúdo original dentro da propriedade 'contents' como string ou objeto
+                if (json && json.contents) {
+                    veiculoFetch = typeof json.contents === 'string' ? JSON.parse(json.contents) : json.contents;
+                }
+                
+                // Ajuste para a estrutura real da API: { data: { ... } }
                 if (veiculoFetch && veiculoFetch.data) veiculoFetch = veiculoFetch.data;
-                if (veiculoFetch && veiculoFetch.dados) veiculoFetch = veiculoFetch.dados;
             } catch (e) {
-                console.error('Erro de requisição ou CORS:', e);
+                console.error('Erro na consulta da placa:', e);
                 veiculoFetch = { erro: true };
-                alert("Atenção: A primeira tentativa falhou. Erro: " + e.message);
             }
 
             await visualDelay;
 
             document.getElementById('demo-loading').style.display = 'none';
 
-            // Verifica se a API retornou campos minimamente válidos
-            if (veiculoFetch && !veiculoFetch.erro && Object.keys(veiculoFetch).length > 1 && !veiculoFetch.error) {
+            // Verifica se a API retornou campos válidos
+            if (veiculoFetch && !veiculoFetch.erro && !veiculoFetch.error && (veiculoFetch.Modelo || veiculoFetch.modelo || veiculoFetch.MODELO)) {
                 const val = (propNames, fallback) => {
                     for (let k of propNames) {
-                        if (veiculoFetch[k] !== undefined && veiculoFetch[k] !== null && veiculoFetch[k] !== '') {
+                        if (veiculoFetch[k] !== undefined && veiculoFetch[k] !== null && veiculoFetch[k] !== '' && veiculoFetch[k] !== 'N/A') {
                             return veiculoFetch[k];
                         }
                     }
                     return fallback;
                 };
 
-                const modeloFinal = val(['Modelo', 'modelo', 'MODELO', 'MARCA_MODELO'], 'Não identificado');
+                const modeloFinal = val(['Modelo', 'modelo', 'MODELO', 'MARCA_MODELO'], 'Veículo não encontrado');
                 const marcaFinal = val(['Marca', 'marca', 'MARCA'], 'N/A');
 
-                let anoFinal = val(['Ano', 'ano', 'ANO'], '');
-                let anoModeloFinal = val(['Ano Modelo', 'anoModelo', 'ano_modelo'], '');
-                if (anoFinal !== '' && anoModeloFinal !== '') anoFinal = anoFinal + '/' + anoModeloFinal;
-                if (anoFinal === '') {
-                    anoFinal = val(['ano_fabricacao', 'anoF'], '') + '/' + val(['ano_modelo', 'anoModelo'], '');
-                }
-                if (anoFinal === '/') anoFinal = 'N/A';
+                let anoFab = val(['Ano', 'ano', 'ANO', 'ano_fabricacao'], '');
+                let anoMod = val(['Ano Modelo', 'anoModelo', 'ano_modelo'], '');
+                let anoFinal = (anoFab && anoMod) ? `${anoFab}/${anoMod}` : (anoFab || anoMod || 'N/A');
 
-                const motorFinal = val(['Cilindrada', 'Potencia', 'Motor', 'motor', 'MOTOR', 'potencia', 'potencia_motor', 'cilindrada'], 'N/A');
+                const motorFinal = val(['Motor', 'motor', 'MOTOR', 'Cilindrada', 'cilindrada', 'Potencia', 'potencia'], 'N/A');
                 const corFinal = val(['Cor', 'cor', 'COR'], 'N/A');
-                const combFinal = val(['Combustível', 'combustível', 'combustivel', 'COMBUSTIVEL', 'comb'], 'N/A');
-                const catFinal = val(['Segmento', 'Especie Veiculo', 'categoria', 'Categoria', 'CATEGORIA', 'segmento'], 'Veículo');
+                const combFinal = val(['Combustível', 'combustivel', 'COMBUSTIVEL', 'comb'], 'N/A');
+                const catFinal = val(['Especie Veiculo', 'especie', 'Segmento', 'categoria', 'Categoria', 'CATEGORIA'], 'Passeio');
 
                 document.getElementById('result-placa').textContent = raw.slice(0, 3) + '-' + raw.slice(3);
                 document.getElementById('result-modelo').textContent = modeloFinal;
                 document.getElementById('result-marca').textContent = marcaFinal;
                 document.getElementById('result-ano').textContent = anoFinal;
                 document.getElementById('result-motor').textContent = motorFinal;
-                document.getElementById('result-cor').textContent = (corFinal && corFinal.length > 2) ? corFinal : 'N/A';
+                document.getElementById('result-cor').textContent = corFinal;
                 document.getElementById('result-comb').textContent = combFinal;
                 document.getElementById('result-cat').textContent = catFinal;
             } else {
-                // Fallback: se a API estiver fora do ar ou não encontrar a placa, usa uma simulada da lista
+                // Fallback apenas se a placa realmente não existir ou a API falhar completamente
                 const idx = raw.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % veiculosDemo.length;
                 const v = veiculosDemo[idx];
                 document.getElementById('result-placa').textContent = raw.slice(0, 3) + '-' + raw.slice(3);
