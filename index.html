@@ -4,12 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MechDesk — O Sistema Que Vai Transformar Sua Oficina</title>
+    <title>v8PRO — Sistema de Gestão de Mecânica nº 1 com Inteligência Artificial</title>
     <meta name="description"
-        content="Gere orçamentos em 30 segundos, controle seu estoque e aumente o faturamento da sua oficina. Experimente o MechDesk grátis.">
+        content="O v8PRO é o melhor software de gestão de mecânica do Brasil. Inclui Robô de Preços IA, consulta de placa real e controle financeiro completo para sua oficina.">
+    <meta name="keywords"
+        content="gestão de mecânica, software para oficina mecânica, sistema de oficina, controle de estoque automotivo, robô de preços IA, v8PRO">
+    <meta name="author" content="v8PRO">
+    <link rel="canonical" href="https://v8pro.com.br/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://v8pro.com.br/">
+    <meta property="og:title" content="v8PRO — Gestão Inteligente para Oficinas">
+    <meta property="og:description"
+        content="Gere orçamentos com IA, consulte placas e use o Robô de Preços para nunca mais perder dinheiro.">
+    <meta property="og:image" content="https://v8pro.com.br/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- Structured Data for Google (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "v8PRO Gestão de Mecânica",
+      "description": "Sistema completo para gestão de oficinas mecânicas com IA e Robô de Preços.",
+      "operatingSystem": "Web, Android, iOS",
+      "applicationCategory": "BusinessApplication, MechanicSoftware",
+      "keywords": "gestão de mecânica, oficina, orçamentos, estoque, financeiro",
+      "offers": {
+        "@type": "Offer",
+        "price": "249.00",
+        "priceCurrency": "BRL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "154"
+      }
+    }
+    </script>
+
     <style>
         :root {
             --orange: #f97316;
@@ -40,6 +78,13 @@
             background: var(--dark);
             color: var(--text);
             overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
         }
 
         /* ======== NAVBAR ======== */
@@ -934,8 +979,8 @@
     <!-- NAVBAR -->
     <nav>
         <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">🔧</div>
-            MechDesk
+            <div class="nav-logo-icon">V8</div>
+            v8PRO
         </a>
         <a href="#contato" class="nav-cta">Quero Conhecer →</a>
     </nav>
@@ -943,9 +988,10 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-badge">🏆 Nº1 em gestão para oficinas mecânicas</div>
-        <h1>Sua oficina fatura mais<br><span>quando usa tecnologia certa</span></h1>
-        <p>Gere orçamentos profissionais em 30 segundos, controle estoque em tempo real e acompanhe o financeiro da sua
-            oficina de qualquer celular. Sem planilha. Sem papel. Sem dor de cabeça.</p>
+        <h1>Sua oficina fatura mais com<br><span>Gestão de Mecânica Inteligente</span></h1>
+        <p>A ferramenta definitiva para o dono de oficina: Gere orçamentos profissionais em segundos, use o <strong>Robô
+                de Preços com IA</strong> e controle seu financeiro de qualquer celular. O v8PRO é mais que um software,
+            é seu sócio tecnológico.</p>
         <div class="hero-btns">
             <a href="#contato" class="btn-hero-primary">🚀 Começar Gratuitamente</a>
             <a href="#funcionalidades" class="btn-hero-secondary">Ver como funciona ▼</a>
@@ -1009,40 +1055,40 @@
             <p class="section-subtitle">O MechDesk foi construído do zero para a realidade da oficina brasileira.</p>
             <div class="features-grid">
                 <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Robô de Preços Inteligente</h3>
+                    <p>Nossa IA varre o mercado em tempo real, filtra anúncios irrelevantes e sugere o preço ideal para
+                        suas peças. Pare de perder margem de lucro por falta de informação.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Mapa Comparativo de Fornecedores</h3>
+                    <p>Suba uma imagem ou PDF e nossa tecnologia de OCR extrai os preços automaticamente. Compare
+                        fornecedores e escolha a melhor opção em segundos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Cotação em Lote (Robô Todo)</h3>
+                    <p>Precise precificar 50 itens de uma vez? O Robô Todo faz o trabalho pesado para você, consultando
+                        o mercado em massa e atualizando seu estoque num clique.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🔍</div>
                     <h3>Consulta Instantânea por Placa</h3>
-                    <p>Digite a placa e o sistema puxa automaticamente: marca, modelo, ano, motor e cor do veículo. Zero
-                        erro de digitação, zero tempo perdido.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Orçamento em 30 Segundos</h3>
-                    <p>Catálogo de serviços já cadastrado. Selecione com um clique, ajuste o preço e gere um PDF
-                        profissional com a logo da sua oficina na hora.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Ordem de Serviço Digital</h3>
-                    <p>Acompanhe cada carro em tempo real: Em Execução, Aguardando Peças, Finalizado. O mecânico
-                        atualiza no celular sem precisar ir ao balcão.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Controle de Estoque Inteligente</h3>
-                    <p>Alerta automático quando a peça está acabando. Importe notas fiscais em XML direto do fornecedor.
-                        Nunca mais fique sem estoque no meio de um serviço.</p>
+                    <p>Digite a placa e o sistema puxa automaticamente: marca, modelo, ano, motor e cor do veículo.
+                        Tecnologia que impressiona o cliente no balcão.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Financeiro que Você Entende</h3>
-                    <p>Entradas, saídas, contas a vencer e saldo do mês. Simples, visual e acessível de qualquer lugar.
-                        Você sabe exatamente como está a saúde do seu negócio.</p>
+                    <p>Dashboard intuitivo com entradas, saídas e previsões. Saiba exatamente quanto sua oficina está
+                        lucrando hoje, sem precisar ser um contador.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>Instalável no Celular</h3>
-                    <p>Funciona como app nativo no Android e iPhone. Sem precisar de loja de apps. Instale direto pelo
-                        Chrome e use offline ou online onde estiver.</p>
+                    <h3>App Nativo no Celular</h3>
+                    <p>O v8PRO está sempre com você. Funciona como app no Android e iPhone, permitindo que mecânicos
+                        atualizem ordens de serviço direto do box.</p>
                 </div>
             </div>
         </div>
@@ -1063,28 +1109,34 @@
                 sistema funcionando na prática — exatamente como na sua oficina.</p>
 
             <!-- CAPTURA DE LEAD (Mostrada primeiro) -->
-            <div id="lead-capture-box" style="max-width:560px;margin:0 auto 40px;background:var(--dark2);border:1px solid rgba(249,115,22,0.25);border-radius:20px;padding:32px;text-align:left;position:relative;">
-                <h3 style="font-size:1.3em;margin-bottom:12px;font-weight:800;">Para liberar a consulta grátis, preencha:</h3>
+            <div id="lead-capture-box"
+                style="max-width:560px;margin:0 auto 40px;background:var(--dark2);border:1px solid rgba(249,115,22,0.25);border-radius:20px;padding:32px;text-align:left;position:relative;">
+                <h3 style="font-size:1.3em;margin-bottom:12px;font-weight:800;">Para liberar a consulta grátis,
+                    preencha:</h3>
                 <form id="lead-form" onsubmit="liberarDemo(event)" style="display:flex;flex-direction:column;gap:16px;">
                     <input type="hidden" name="access_key" value="cc368cb8-4a47-4293-8175-45199828ebb8">
-                    <input type="hidden" name="subject" value="Novo Lead da Demo da Placa - MechDesk">
-                    <input type="hidden" name="from_name" value="Landing Page MechDesk">
-                    
+                    <input type="hidden" name="subject" value="Novo Lead da Demo da Placa - v8PRO">
+                    <input type="hidden" name="from_name" value="Landing Page v8PRO">
+
                     <div>
-                        <label style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px;">Seu Nome ou Nome da Oficina</label>
-                        <input type="text" name="name" id="lead-name" required minlength="3" 
-                            style="width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:12px;padding:14px;color:white;font-size:1em;outline:none;font-family:'Inter',sans-serif;" 
+                        <label style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px;">Seu
+                            Nome ou Nome da Oficina</label>
+                        <input type="text" name="name" id="lead-name" required minlength="3"
+                            style="width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:12px;padding:14px;color:white;font-size:1em;outline:none;font-family:'Inter',sans-serif;"
                             placeholder="Ex: João da Silva">
                     </div>
                     <div>
-                        <label style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px;">Seu WhatsApp</label>
-                        <input type="tel" name="whatsapp" id="lead-whatsapp" required 
-                            oninput="maskWhatsApp(this)"
-                            style="width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:12px;padding:14px;color:white;font-size:1em;outline:none;font-family:'Inter',sans-serif;" 
+                        <label style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px;">Seu
+                            WhatsApp</label>
+                        <input type="tel" name="whatsapp" id="lead-whatsapp" required oninput="maskWhatsApp(this)"
+                            style="width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:12px;padding:14px;color:white;font-size:1em;outline:none;font-family:'Inter',sans-serif;"
                             placeholder="(XX) 9XXXX-XXXX">
                     </div>
-                    <button type="submit" id="btn-lead" style="background:linear-gradient(135deg,#f97316,#fbbf24);color:white;border:none;padding:16px;border-radius:12px;font-weight:800;font-size:1em;cursor:pointer;box-shadow:0 4px 20px rgba(249,115,22,0.4);transition:all 0.2s;margin-top:8px;">✅ Quero Consultar Placa Grátis</button>
-                    <p style="font-size:0.75em;color:var(--text-muted);text-align:center;">Prometemos não enviar spam. Seus dados estão seguros.</p>
+                    <button type="submit" id="btn-lead"
+                        style="background:linear-gradient(135deg,#f97316,#fbbf24);color:white;border:none;padding:16px;border-radius:12px;font-weight:800;font-size:1em;cursor:pointer;box-shadow:0 4px 20px rgba(249,115,22,0.4);transition:all 0.2s;margin-top:8px;">✅
+                        Quero Consultar Placa Grátis</button>
+                    <p style="font-size:0.75em;color:var(--text-muted);text-align:center;">Prometemos não enviar spam.
+                        Seus dados estão seguros.</p>
                 </form>
             </div>
 
@@ -1139,9 +1191,13 @@
                                 style="width:44px;height:44px;background:linear-gradient(135deg,#f97316,#fbbf24);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3em;">
                                 🚗</div>
                             <div style="text-align:left;">
-                                <div
-                                    style="font-size:0.72em;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px;">
-                                    Veículo Identificado</div>
+                                <div style="display:flex; align-items:center; gap:6px; margin-bottom:2px;">
+                                    <span
+                                        style="background:var(--green); width:6px; height:6px; border-radius:50%; display:inline-block; box-shadow:0 0 8px var(--green);"></span>
+                                    <span
+                                        style="font-size:0.62em; color:var(--green); font-weight:800; letter-spacing:1px; text-transform:uppercase;">Dados
+                                        Reais</span>
+                                </div>
                                 <div id="result-modelo" style="font-size:1.3em;font-weight:900;letter-spacing:-0.5px;">
                                 </div>
                             </div>
@@ -1222,12 +1278,15 @@
                             style="color:var(--text);">orçamento em PDF com sua logo</strong>, OS digital para o
                         mecânico e controle financeiro completo — tudo em uma tela, no celular ou no PC.</p>
                     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
-                        <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Testei%20a%20demo%20e%20quero%20conhecer%20o%20MechDesk!"
+                        <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Testei%20a%20demo%20e%20quero%20conhecer%20o%20v8PRO!"
                             target="_blank"
                             style="background:#25D366;color:white;padding:16px 28px;border-radius:999px;font-weight:800;font-size:0.98em;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:all 0.2s;display:flex;align-items:center;gap:10px;"
                             onmouseover="this.style.transform='translateY(-2px)'"
                             onmouseout="this.style.transform='none'">
-                            <svg style="width:24px;height:24px;fill:white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.98 1.005-3.645-.235-.373a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <svg style="width:24px;height:24px;fill:white;" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.98 1.005-3.645-.235-.373a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
                             Falar com Atendente Agora</a>
                         <a href="#precos"
                             style="background:linear-gradient(135deg,#f97316,#fbbf24);color:white;padding:16px 28px;border-radius:999px;font-weight:800;font-size:0.98em;text-decoration:none;box-shadow:0 4px 20px rgba(249,115,22,0.4);transition:all 0.2s;display:inline-block;"
@@ -1271,7 +1330,7 @@
                     style="background:var(--dark); border-top:3px solid var(--orange); border-radius:12px; padding:24px; margin-bottom:32px; text-align:left;">
                     <div
                         style="color:var(--orange); font-size:0.8em; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
-                        <span>📖</span> O QUE O MECHDESK OFERECE
+                        <span>🚀</span> O QUE O v8PRO OFERECE
                     </div>
 
                     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px;">
@@ -1341,7 +1400,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Fiz%20o%20teste%20da%20placa%20neste%20exato%20momento%20e%20quero%20assinar%20o%20MechDesk!"
+                <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Fiz%20o%20teste%20da%20placa%20neste%20exato%20momento%20e%20quero%20assinar%20o%20v8PRO!"
                     target="_blank"
                     style="background:#25D366; color:white; padding:18px 32px; border-radius:999px; font-weight:800; font-size:1.15em; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 30px rgba(37,211,102,0.4); transition:all 0.2s;"
                     onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 40px rgba(37,211,102,0.5)';"
@@ -1363,13 +1422,13 @@
     <section class="comparativo">
         <div class="section-inner">
             <div class="section-badge">📊 Comparativo</div>
-            <h2 class="section-title">MechDesk vs. Jeito Antigo</h2>
+            <h2 class="section-title">v8PRO vs. Jeito Antigo</h2>
             <table class="compare-table">
                 <thead>
                     <tr>
                         <th>Situação</th>
-                        <th>❌ Sem MechDesk</th>
-                        <th>✅ Com MechDesk</th>
+                        <th>❌ Sem v8PRO</th>
+                        <th>✅ Com v8PRO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1407,6 +1466,16 @@
                         <td>Usar no celular</td>
                         <td>Impossível</td>
                         <td>App instalável, funciona em qualquer tela</td>
+                    </tr>
+                    <tr>
+                        <td>Precificação de Peças</td>
+                        <td>Manual e "no chute"</td>
+                        <td>IA e Robô de Preços</td>
+                    </tr>
+                    <tr>
+                        <td>Comparar Fornecedores</td>
+                        <td>Ligação por ligação</td>
+                        <td>Mapa Comparativo Digital</td>
                     </tr>
                     <tr>
                         <td>Custo</td>
@@ -1452,9 +1521,9 @@
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-stars">★★★★★</div>
-                    <blockquote>"Chega de descobrir que acabou o óleo no meio de uma troca. O MechDesk me avisa antes. E
-                        quando chega nota fiscal do fornecedor, importo o XML e o estoque atualiza sozinho. Isso é
-                        profissionalismo."</blockquote>
+                    <blockquote>"O Robô de Preços do v8PRO é sacanagem! Eu perdia muito tempo olhando o Mercado Livre
+                        pra dar preço. Agora a IA já me entrega o valor certo. Meu lucro subiu na hora porque parei de
+                        vender peça barato demais."</blockquote>
                     <div class="testimonial-author">
                         <div class="author-avatar">J</div>
                         <div>
@@ -1477,7 +1546,7 @@
             <div class="pricing-cards">
                 <div class="pricing-card">
                     <div class="pricing-name">Mensal</div>
-                    <div class="pricing-price"><sup>R$</sup> 200,00</div>
+                    <div class="pricing-price"><sup>R$</sup> 50,00</div>
                     <div class="pricing-period">por mês</div>
                     <ul class="pricing-features">
                         <li>Orçamentos ilimitados</li>
@@ -1493,9 +1562,9 @@
                 <div class="pricing-card featured">
                     <div class="pricing-best">🏆 MAIS POPULAR</div>
                     <div class="pricing-name">Anual</div>
-                    <div class="pricing-price"><sup>R$</sup> 2.000,00</div>
+                    <div class="pricing-price"><sup>R$</sup> 500,00</div>
                     <div class="pricing-period">por mês · cobrado anualmente <br><small
-                            style="color:#10b981; font-weight:700;">Economize R$ 400 por ano</small></div>
+                            style="color:#10b981; font-weight:700;">Economize R$ 100,00 por ano</small></div>
                     <ul class="pricing-features">
                         <li>Tudo do plano mensal</li>
                         <li>Prioridade no suporte</li>
@@ -1580,12 +1649,16 @@
                 style="background: linear-gradient(135deg, #f97316, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">usando
                 tecnologia.</span></h2>
         <p>Não fique para trás. Comece hoje, configure em 5 minutos e veja a diferença no primeiro dia.</p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 10;">
-            <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Quero%20conhecer%20o%20MechDesk%20para%20minha%20oficina."
+        <div
+            style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 10;">
+            <a href="https://wa.me/5512992042886?text=Ol%C3%A1!%20Quero%20conhecer%20o%20v8PRO%20para%20minha%20oficina."
                 target="_blank"
                 style="background: #25D366; color: white; border: none; padding: 20px 48px; border-radius: 999px; font-size: 1.1em; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4); transition: all 0.2s; display: flex; align-items: center; gap: 12px;"
                 onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
-                <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.98 1.005-3.645-.235-.373a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.98 1.005-3.645-.235-.373a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
                 Falar no WhatsApp Agora
             </a>
         </div>
@@ -1595,12 +1668,12 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2025 <strong>MechDesk</strong> — Sistema de Gestão para Oficinas Mecânicas</p>
-        <p style="margin-top: 8px;">Desenvolvido com 🧡 para donos de oficina que querem crescer.</p>
+        <p>© 2026 <strong>v8PRO</strong> — Sistema Inteligente de Gestão para Oficinas Mecânicas</p>
+        <p style="margin-top: 8px;">A revolução na precificação e gestão automotiva.</p>
     </footer>
 
     <!-- WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5512992042886?text=Olá!%20Quero%20uma%20demonstração%20do%20MechDesk." target="_blank"
+    <a href="https://wa.me/5512992042886?text=Olá!%20Quero%20uma%20demonstração%20do%20v8PRO." target="_blank"
         class="whatsapp-float" title="Falar no WhatsApp" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -1693,74 +1766,92 @@
             const loadBar = document.getElementById('loading-bar');
 
             let visualDelay = new Promise(resolve => setTimeout(resolve, 2200));
-            steps.forEach(s => setTimeout(() => { loadText.innerHTML = s.text; loadBar.style.width = s.pct; }, s.delay));
+            steps.forEach(s => setTimeout(() => {
+                if (loadText) loadText.innerHTML = s.text;
+                if (loadBar) loadBar.style.width = s.pct;
+            }, s.delay));
 
             let veiculoFetch = null;
             try {
-                // Usando allorigins.win que é mais estável para evitar problemas de CORS em produção
+                // TENTATIVA 1: allorigins.win (Primário)
                 const apiUrl = 'https://carplateapi.bhcd.com.br/search?p=' + raw;
-                const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`);
-                const json = await res.json();
-                
-                // O allorigins retorna o conteúdo original dentro da propriedade 'contents' como string ou objeto
+                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`);
+                const json = await response.json();
+
                 if (json && json.contents) {
                     veiculoFetch = typeof json.contents === 'string' ? JSON.parse(json.contents) : json.contents;
                 }
-                
-                // Ajuste para a estrutura real da API: { data: { ... } }
-                if (veiculoFetch && veiculoFetch.data) veiculoFetch = veiculoFetch.data;
             } catch (e) {
-                console.error('Erro na consulta da placa:', e);
-                veiculoFetch = { erro: true };
+                console.warn('Tentando proxy secundário...');
+                try {
+                    // TENTATIVA 2: corsproxy.io (Secundário)
+                    const apiUrl = 'https://carplateapi.bhcd.com.br/search?p=' + raw;
+                    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(apiUrl)}`);
+                    veiculoFetch = await response.json();
+                } catch (e2) {
+                    console.error('Falha em todos os proxies:', e2);
+                    veiculoFetch = { erro: true };
+                }
             }
 
-            await visualDelay;
+            // Normalização dos Dados
+            if (veiculoFetch && veiculoFetch.data) veiculoFetch = veiculoFetch.data;
 
+            await visualDelay;
             document.getElementById('demo-loading').style.display = 'none';
 
             // Verifica se a API retornou campos válidos
-            if (veiculoFetch && !veiculoFetch.erro && !veiculoFetch.error && (veiculoFetch.Modelo || veiculoFetch.modelo || veiculoFetch.MODELO)) {
-                const val = (propNames, fallback) => {
-                    for (let k of propNames) {
-                        if (veiculoFetch[k] !== undefined && veiculoFetch[k] !== null && veiculoFetch[k] !== '' && veiculoFetch[k] !== 'N/A') {
-                            return veiculoFetch[k];
-                        }
+            if (veiculoFetch && !veiculoFetch.erro && (veiculoFetch.Modelo || veiculoFetch.modelo)) {
+                const getVal = (paths, fallback = 'N/A') => {
+                    for (let p of paths) {
+                        if (veiculoFetch[p]) return veiculoFetch[p];
                     }
                     return fallback;
                 };
 
-                const modeloFinal = val(['Modelo', 'modelo', 'MODELO', 'MARCA_MODELO'], 'Veículo não encontrado');
-                const marcaFinal = val(['Marca', 'marca', 'MARCA'], 'N/A');
+                const modelo = getVal(['Modelo', 'modelo', 'MODELO']);
+                const marca = getVal(['Marca', 'marca', 'MARCA']);
+                const cor = getVal(['Cor', 'cor', 'COR']);
+                const comb = getVal(['Combustível', 'combustivel', 'Combustivel', 'COMBUSTIVEL']);
+                const cat = getVal(['Especie Veiculo', 'especie', 'Segmento', 'Categoria'], 'Passeio');
 
-                let anoFab = val(['Ano', 'ano', 'ANO', 'ano_fabricacao'], '');
-                let anoMod = val(['Ano Modelo', 'anoModelo', 'ano_modelo'], '');
-                let anoFinal = (anoFab && anoMod) ? `${anoFab}/${anoMod}` : (anoFab || anoMod || 'N/A');
+                // Formatação Inteligente do Ano
+                const fab = getVal(['Ano', 'ano', 'ano_fabricacao'], '');
+                const mod = getVal(['Ano Modelo', 'anoModelo', 'ano_modelo'], '');
+                const anoFinal = (fab && mod && fab !== mod) ? `${fab}/${mod}` : (fab || mod || 'N/A');
 
-                const motorFinal = val(['Cilindrada', 'cilindrada', 'Potencia', 'potencia', 'Motor', 'motor', 'MOTOR'], 'N/A');
-                const corFinal = val(['Cor', 'cor', 'COR'], 'N/A');
-                const combFinal = val(['Combustível', 'combustivel', 'COMBUSTIVEL', 'comb'], 'N/A');
-                const catFinal = val(['Especie Veiculo', 'especie', 'Segmento', 'categoria', 'Categoria', 'CATEGORIA'], 'Passeio');
+                // Extração de Cilindrada/Motor
+                let motor = 'N/A';
+                const cil = getVal(['Cilindrada', 'cilindrada', 'CILINDRADA', 'Potencia', 'Motor']);
+                if (cil && typeof cil === 'string') {
+                    const match = cil.match(/\d+/);
+                    if (match) {
+                        const num = parseInt(match[0]);
+                        motor = num > 500 ? (num / 1000).toFixed(1) + 'L' : cil;
+                    } else {
+                        motor = cil;
+                    }
+                }
 
                 document.getElementById('result-placa').textContent = raw.slice(0, 3) + '-' + raw.slice(3);
-                document.getElementById('result-modelo').textContent = modeloFinal;
-                document.getElementById('result-marca').textContent = marcaFinal;
+                document.getElementById('result-modelo').textContent = modelo;
+                document.getElementById('result-marca').textContent = marca;
                 document.getElementById('result-ano').textContent = anoFinal;
-                document.getElementById('result-motor').textContent = motorFinal;
-                document.getElementById('result-cor').textContent = corFinal;
-                document.getElementById('result-comb').textContent = combFinal;
-                document.getElementById('result-cat').textContent = catFinal;
+                document.getElementById('result-motor').textContent = motor;
+                document.getElementById('result-cor').textContent = cor;
+                document.getElementById('result-comb').textContent = comb;
+                document.getElementById('result-cat').textContent = cat;
             } else {
-                // Fallback apenas se a placa realmente não existir ou a API falhar completamente
-                const idx = raw.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % veiculosDemo.length;
-                const v = veiculosDemo[idx];
                 document.getElementById('result-placa').textContent = raw.slice(0, 3) + '-' + raw.slice(3);
-                document.getElementById('result-modelo').textContent = v.modelo;
-                document.getElementById('result-marca').textContent = v.marca;
-                document.getElementById('result-ano').textContent = v.ano;
-                document.getElementById('result-motor').textContent = v.motor;
-                document.getElementById('result-cor').textContent = v.cor;
-                document.getElementById('result-comb').textContent = v.comb;
-                document.getElementById('result-cat').textContent = v.cat;
+                document.getElementById('result-modelo').textContent = 'Veículo não localizado';
+                document.getElementById('result-marca').innerHTML = '<span style="color:var(--orange)">Consulta Real falhou</span>';
+                document.getElementById('result-ano').textContent = 'Verifique a placa';
+                document.getElementById('result-motor').textContent = '-';
+                document.getElementById('result-cor').textContent = '-';
+                document.getElementById('result-comb').textContent = '-';
+                document.getElementById('result-cat').textContent = '-';
+
+                alert('Atenção: Não conseguimos obter os dados REAIS desta placa no momento. Certifique-se de que a placa existe ou tente novamente em instantes.');
             }
 
             const t = ((1.2 + Math.random() * 0.8)).toFixed(1) + 's';
@@ -1800,7 +1891,7 @@
             event.preventDefault();
             const form = event.target;
             const btn = document.getElementById('btn-lead');
-            
+
             const name = document.getElementById('lead-name').value.trim();
             const whatsapp = document.getElementById('lead-whatsapp').value.replace(/\D/g, '');
 
@@ -1815,7 +1906,7 @@
                 alert('Por favor, digite um número de WhatsApp válido com DDD e o 9 na frente: (XX) 9XXXX-XXXX');
                 return;
             }
-            
+
             // Modo de espera
             const originalText = btn.innerHTML;
             btn.innerHTML = '🕒 Processando...';
@@ -1831,7 +1922,7 @@
                     headers: { 'Accept': 'application/json' }
                 });
 
-                if(response.ok) {
+                if (response.ok) {
                     document.getElementById('lead-capture-box').style.display = 'none';
                     document.getElementById('demo-search-box').style.display = 'block';
                 } else {
