@@ -927,7 +927,105 @@
             box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
         }
 
-        /* ======== MOBILE ======== */
+        /* ======== TOUR VISUAL ======== */
+        .tour {
+            background: linear-gradient(to bottom, var(--dark), var(--dark2));
+            padding: 100px 24px;
+        }
+
+        .tour-container {
+            margin-top: 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tour-tabs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+        }
+
+        .tour-tab {
+            padding: 12px 24px;
+            border-radius: 999px;
+            border: none;
+            background: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tour-tab.active {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 4px 15px var(--orange-glow);
+        }
+
+        .tour-content {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .laptop-mockup {
+            position: relative;
+            background: #222;
+            border-radius: 20px;
+            padding: 12px;
+            border: 4px solid #333;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+            aspect-ratio: 16/10;
+            overflow: hidden;
+        }
+
+        .laptop-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            transition: opacity 0.5s ease;
+        }
+
+        .tour-info h3 {
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tour-info p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 900px) {
+            .tour-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .tour-info {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 14px 20px;
@@ -1052,7 +1150,7 @@
         <div class="section-inner">
             <div class="section-badge">✅ A Solução</div>
             <h2 class="section-title">Tudo que sua oficina precisa,<br>em um só lugar</h2>
-            <p class="section-subtitle">O MechDesk foi construído do zero para a realidade da oficina brasileira.</p>
+            <p class="section-subtitle">O v8PRO foi construído do zero para a realidade da oficina brasileira.</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
@@ -1089,6 +1187,39 @@
                     <h3>App Nativo no Celular</h3>
                     <p>O v8PRO está sempre com você. Funciona como app no Android e iPhone, permitindo que mecânicos
                         atualizem ordens de serviço direto do box.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOUR VISUAL -->
+    <section id="tour" class="tour">
+        <div class="section-inner">
+            <div class="section-badge">👀 Tour Visual</div>
+            <h2 class="section-title">A interface mais moderna do mercado</h2>
+            <p class="section-subtitle">Visual limpo, intuitivo e pensado para a velocidade da sua oficina.</p>
+
+            <div class="tour-container">
+                <div class="tour-tabs">
+                    <button class="tour-tab active" onclick="switchTour(0)">Dashboard</button>
+                    <button class="tour-tab" onclick="switchTour(1)">Carrinho</button>
+                    <button class="tour-tab" onclick="switchTour(2)">Orçamentos</button>
+                    <button class="tour-tab" onclick="switchTour(3)">Notificações</button>
+                    <button class="tour-tab" onclick="switchTour(4)">Financeiro</button>
+                    <button class="tour-tab" onclick="switchTour(5)">Histórico</button>
+                    <button class="tour-tab" onclick="switchTour(6)">Ordem Serviços</button>
+                    <button class="tour-tab" onclick="switchTour(7)">Design</button>
+                </div>
+
+                <div class="tour-content">
+                    <div class="laptop-mockup">
+                        <img id="tour-img" src="assets/dashboard.png" alt="v8PRO Dashboard">
+                    </div>
+                    <div class="tour-info">
+                        <h3 id="tour-title">Painel de Controle Completo</h3>
+                        <p id="tour-desc">Tenha uma visão 360º da sua oficina. Faturamento, ticket médio, fluxo de
+                            serviços e performance financeira em um dashboard inteligente e em tempo real.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1322,7 +1453,7 @@
                 <h3 style="font-size:1.8em; font-weight:900; margin-bottom:12px; letter-spacing:-0.5px;">Gostou da
                     agilidade?</h3>
                 <p style="color:var(--text-muted); margin-bottom:24px; font-size:1.05em; line-height:1.6;">Com o
-                    MechDesk você integra essa consulta <strong>direto no seu orçamento</strong>. Diga adeus à perda de
+                    v8PRO você integra essa consulta <strong>direto no seu orçamento</strong>. Diga adeus à perda de
                     tempo e impressione seu cliente!</p>
 
                 <!-- Grid estilo da Imagem -->
@@ -1591,7 +1722,7 @@
                         <span class="faq-arrow">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Não! O MechDesk funciona 100% pelo navegador: Chrome, Safari,
+                        <div class="faq-answer-inner">Não! O v8PRO funciona 100% pelo navegador: Chrome, Safari,
                             Edge. Basta acessar o link e pronto. No celular, você pode instalar como app direto pelo
                             navegador sem precisar da Play Store ou App Store.</div>
                     </div>
@@ -1613,7 +1744,7 @@
                         <span class="faq-arrow">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Sim. O MechDesk usa o Google Firebase, a mesma infraestrutura que
+                        <div class="faq-answer-inner">Sim. O v8PRO usa o Google Firebase, a mesma infraestrutura que
                             protege dados de milhões de empresas no mundo. Backup automático, conexão criptografada
                             (HTTPS) e login com senha segura.</div>
                     </div>
@@ -1885,6 +2016,71 @@
             document.getElementById('demo-plate-input').placeholder = 'Ex: ABC1234 ou ABC1D23';
             document.getElementById('demo-search-box').style.display = 'block';
             document.getElementById('demo').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        /* ====== TOUR VISUAL LOGIC ====== */
+        const tourData = [
+            {
+                img: 'assets/dashboard.png',
+                title: 'Dashboard Inteligente',
+                desc: 'Acompanhe faturamento, ticket médio e fluxo de serviços em tempo real com gráficos intuitivos.'
+            },
+            {
+                img: 'assets/bi.png',
+                title: 'Carrinho de Peças',
+                desc: 'Adicione itens, visualize margens de lucro e organize a lista de peças antes de gerar o orçamento.'
+            },
+            {
+                img: 'assets/orcamento.png',
+                title: 'Criação de Orçamentos',
+                desc: 'Gere orçamentos profissionais com um clique, incluindo busca automática de dados pela placa.'
+            },
+            {
+                img: 'assets/carrinho.png',
+                title: 'Central de Notificações',
+                desc: 'Receba alertas sobre serviços atrasados, peças em falta e lembretes importantes para o dia a dia.'
+            },
+            {
+                img: 'assets/financeiro.png',
+                title: 'Gestão Financeira',
+                desc: 'Controle entradas, saídas e fluxo de caixa com filtros por status de pagamento e categoria.'
+            },
+            {
+                img: 'assets/estoque.png',
+                title: 'Histórico do Veículo',
+                desc: 'Acesse todo o passado de manutenções de cada veículo e cliente para um atendimento personalizado.'
+            },
+            {
+                img: 'assets/historico.png',
+                title: 'Ordem de Serviço (OS)',
+                desc: 'Acompanhe o status de execução de cada veículo, desde a entrada até a entrega final ao cliente.'
+            },
+            {
+                img: 'assets/login.png',
+                title: 'Identidade Visual Premium',
+                desc: 'Um sistema moderno que valoriza sua oficina e passa confiança para seus clientes.'
+            }
+        ];
+
+        function switchTour(index) {
+            const tabs = document.querySelectorAll('.tour-tab');
+            const img = document.getElementById('tour-img');
+            const title = document.getElementById('tour-title');
+            const desc = document.getElementById('tour-desc');
+
+            tabs.forEach((tab, i) => {
+                if (i === index) tab.classList.add('active');
+                else tab.classList.remove('active');
+            });
+
+            // Fade effect
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = tourData[index].img;
+                title.textContent = tourData[index].title;
+                desc.textContent = tourData[index].desc;
+                img.style.opacity = '1';
+            }, 300);
         }
 
         async function liberarDemo(event) {
