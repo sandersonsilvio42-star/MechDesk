@@ -1904,25 +1904,34 @@
 
             let veiculoFetch = null;
             try {
-                // TENTATIVA 1: allorigins.win (Primário)
                 const apiUrl = 'https://carplateapi.bhcd.com.br/search?p=' + raw;
-                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`);
-                const json = await response.json();
+                
+                // TENTATIVA 0: Direta (Mais rápida se CORS permitir)
+                try {
+                    const directRes = await fetch(apiUrl, { signal: AbortSignal.timeout(3000) });
+                    if (directRes.ok) veiculoFetch = await directRes.json();
+                } catch (e0) {
+                    console.warn('Direto falhou, tentando proxies...');
+                }
 
-                if (json && json.contents) {
-                    veiculoFetch = typeof json.contents === 'string' ? JSON.parse(json.contents) : json.contents;
+                if (!veiculoFetch) {
+                    // TENTATIVA 1: corsproxy.io (Atualmente mais estável)
+                    try {
+                        const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(apiUrl)}`, { signal: AbortSignal.timeout(5000) });
+                        veiculoFetch = await response.json();
+                    } catch (e1) {
+                        console.warn('corsproxy.io falhou, tentando fallback...');
+                        // TENTATIVA 2: allorigins.win (Backup)
+                        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`, { signal: AbortSignal.timeout(5000) });
+                        const json = await response.json();
+                        if (json && json.contents) {
+                            veiculoFetch = typeof json.contents === 'string' ? JSON.parse(json.contents) : json.contents;
+                        }
+                    }
                 }
             } catch (e) {
-                console.warn('Tentando proxy secundário...');
-                try {
-                    // TENTATIVA 2: corsproxy.io (Secundário)
-                    const apiUrl = 'https://carplateapi.bhcd.com.br/search?p=' + raw;
-                    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(apiUrl)}`);
-                    veiculoFetch = await response.json();
-                } catch (e2) {
-                    console.error('Falha em todos os proxies:', e2);
-                    veiculoFetch = { erro: true };
-                }
+                console.error('Falha crítica em todos os métodos de consulta:', e);
+                veiculoFetch = { erro: true };
             }
 
             // Normalização dos Dados
@@ -1941,11 +1950,13 @@
                 };
 
                 const modelo = getVal(['Modelo', 'modelo', 'MODELO']);
-                const marca = getVal(['Marca', 'marca', 'MARCA']);
+                let marca = getVal(['Marca', 'marca', 'MARCA']);
+                if (marca.includes(' - ')) marca = marca.split(' - ')[1]; // Limpa "GM - CHEVROLET" para "CHEVROLET"
+                
                 const cor = getVal(['Cor', 'cor', 'COR']);
                 const comb = getVal(['Combustível', 'combustivel', 'Combustivel', 'COMBUSTIVEL']);
                 const cat = getVal(['Especie Veiculo', 'especie', 'Segmento', 'Categoria'], 'Passeio');
-
+                
                 // Formatação Inteligente do Ano
                 const fab = getVal(['Ano', 'ano', 'ano_fabricacao'], '');
                 const mod = getVal(['Ano Modelo', 'anoModelo', 'ano_modelo'], '');
